@@ -24,7 +24,9 @@ namespace DecToOct
             var uTempVal = uNumber;
             while (uTempVal > 0)
             {
-                strOctNum = (uTempVal % 8) + strOctNum;
+                uint nOctDigit = uTempVal % 8;
+                char chOctDigit = (char)(nOctDigit + '0');
+                strOctNum = chOctDigit + strOctNum;
                 uTempVal /= 8;
             }
             if (strOctNum.Length == 0)
